@@ -13,6 +13,9 @@ html {
 :root {
   --black: #000000;
   --white: #ffffff;
+  --red: #cc2424;
+  --red60: #cc242460;
+  --red50: #cc242450;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -331,6 +334,10 @@ template {
 /* =============
     Base
 ============= */
+body {
+  background-color: var(--red50);
+}
+
 /* =============
     Typography
 ============= */
