@@ -1,0 +1,43 @@
+/* =============
+    Verde
+============= */
+#main-grid-content{
+    display: grid;
+    grid-template-columns: 16px auto 16px;
+    grid-template-areas: ". verde-content .";
+    background-color:red;
+
+    @include md{
+        background-color: yellowgreen;
+    }
+
+    @include lg{
+        background-color:blueviolet;
+    }
+
+    @include xl{
+        background-color:orange;
+    }
+
+    @include xxl{
+        grid-template-columns: auto 1440px auto;
+        background-color: indianred
+    }
+
+    #main-grid-item{
+        grid-area: verde-content;
+        #hero{
+            width: 100%;
+        }
+
+        #ingredients-method-grid{
+            @include lg{
+                display: grid;
+                grid-template-columns: 50% auto;
+                gap: 16px;
+            }
+        }
+    }
+}
+
+

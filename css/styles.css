@@ -373,3 +373,53 @@ textarea {
 /* =============
     Footer
 ============= */
+/* =============
+    Verde
+============= */
+#main-grid-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 16px auto 16px;
+  grid-template-columns: 16px auto 16px;
+      grid-template-areas: ". verde-content .";
+  background-color: red;
+}
+@media (min-width: 768px) {
+  #main-grid-content {
+    background-color: yellowgreen;
+  }
+}
+@media (min-width: 1024px) {
+  #main-grid-content {
+    background-color: blueviolet;
+  }
+}
+@media (min-width: 1200px) {
+  #main-grid-content {
+    background-color: orange;
+  }
+}
+@media (min-width: 1440px) {
+  #main-grid-content {
+    -ms-grid-columns: auto 1440px auto;
+    grid-template-columns: auto 1440px auto;
+    background-color: indianred;
+  }
+}
+#main-grid-content #main-grid-item {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: verde-content;
+}
+#main-grid-content #main-grid-item #hero {
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  #main-grid-content #main-grid-item #ingredients-method-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 16px auto;
+    grid-template-columns: 50% auto;
+    gap: 16px;
+  }
+}
