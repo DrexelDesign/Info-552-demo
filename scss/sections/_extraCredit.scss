@@ -6,6 +6,10 @@
     display: grid;
     grid-template-columns: 16px auto 16px;
     grid-template-areas: ". ec .";
+
+    @include xl{
+        grid-template-columns: auto 1200px auto;
+    }
     >div{
         grid-area: ec;
 
@@ -20,6 +24,24 @@
             "darkBlue"
             "blue";
 
+            @include md{
+                grid-template-rows: repeat(5, 300px);
+                grid-template-columns: 50% auto;
+                grid-template-areas: 
+                "purple blue"
+                "purple  pink"
+                "aqua darkBlue";
+                gap: 30px;
+            }
+
+            @include xl{
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas: 
+                "purple   blue  yellow"
+                "purple   pink  green"
+                "darkBlue aqua  green";
+            }
+
             div{
                 width: 100%;
                 height: 100%;
@@ -33,6 +55,10 @@
             #aqua{
                 background-color: var(--aqua);
                 display: none;
+
+                @include md{
+                    display: block;
+                }
             }
 
             #purple{
@@ -53,11 +79,21 @@
             #yellow{
                 background-color: var(--yellow);
                 display: none;
+
+                @include xl{
+                    display: block;
+                    grid-area: yellow;
+                }
             }
 
             #green{
                 background-color: var(--green);
                 display: none;
+
+                @include xl{
+                    display: block;
+                    grid-area: green;
+                }
             }
         }
     }

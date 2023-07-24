@@ -19,7 +19,7 @@ html {
   --blue: #4361EE;
   --aqua: #4CC9F0;
   --green: #2DD8BB;
-  --yellow: #FFD;
+  --yellow: #FFD200;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -391,6 +391,12 @@ textarea {
   grid-template-columns: 16px auto 16px;
       grid-template-areas: ". ec .";
 }
+@media (min-width: 1200px) {
+  #extraCredit {
+    -ms-grid-columns: auto 1200px auto;
+    grid-template-columns: auto 1200px auto;
+  }
+}
 #extraCredit > div {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -403,6 +409,23 @@ textarea {
   grid-template-rows: repeat(5, 250px);
   gap: 16px;
       grid-template-areas: "pink" "purple" "purple" "darkBlue" "blue";
+}
+@media (min-width: 768px) {
+  #extraCredit > div #colorGrid {
+    -ms-grid-rows: 300px 30px 300px 30px 300px 30px 300px 30px 300px;
+    grid-template-rows: repeat(5, 300px);
+    -ms-grid-columns: 50% 30px auto;
+    grid-template-columns: 50% auto;
+        grid-template-areas: "purple blue" "purple  pink" "aqua darkBlue";
+    gap: 30px;
+  }
+}
+@media (min-width: 1200px) {
+  #extraCredit > div #colorGrid {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "purple   blue  yellow" "purple   pink  green" "darkBlue aqua  green";
+  }
 }
 #extraCredit > div #colorGrid div {
   width: 100%;
@@ -417,6 +440,11 @@ textarea {
 #extraCredit > div #colorGrid #aqua {
   background-color: var(--aqua);
   display: none;
+}
+@media (min-width: 768px) {
+  #extraCredit > div #colorGrid #aqua {
+    display: block;
+  }
 }
 #extraCredit > div #colorGrid #purple {
   -ms-grid-row: 3;
@@ -441,7 +469,66 @@ textarea {
   background-color: var(--yellow);
   display: none;
 }
+@media (min-width: 1200px) {
+  #extraCredit > div #colorGrid #yellow {
+    display: block;
+    grid-area: yellow;
+  }
+}
 #extraCredit > div #colorGrid #green {
   background-color: var(--green);
   display: none;
+}
+@media (min-width: 1200px) {
+  #extraCredit > div #colorGrid #green {
+    display: block;
+    grid-area: green;
+  }
+}
+@media (min-width: 768px) {
+  #extraCredit > div #colorGrid #pink {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+  }
+  #extraCredit > div #colorGrid #purple {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 1;
+  }
+  #extraCredit > div #colorGrid #blue {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  #extraCredit > div #colorGrid #darkBlue {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+  }
+}
+@media (min-width: 1200px) {
+  #extraCredit > div #colorGrid #pink {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  #extraCredit > div #colorGrid #purple {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+  }
+  #extraCredit > div #colorGrid #blue {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  #extraCredit > div #colorGrid #darkBlue {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  #extraCredit > div #colorGrid #yellow {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  #extraCredit > div #colorGrid #green {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+  }
 }
