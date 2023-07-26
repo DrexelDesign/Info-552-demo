@@ -334,6 +334,15 @@ template {
 /* =============
     Typography
 ============= */
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 /* =============
     Buttons
 ============= */
@@ -360,9 +369,199 @@ textarea {
 /* =============
     Navigation
 ============= */
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+.show-menu {
+  display: block !important;
+}
+
+nav {
+  display: none;
+  background-color: var(--charcoal);
+  color: white;
+}
+@media (min-width: 768px) {
+  nav {
+    background-color: white;
+    color: var(--charcoal);
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media (min-width: 768px) {
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media (min-width: 768px) {
+  nav ul li {
+    margin-left: 24px;
+  }
+}
+nav ul li a:link, nav ul li a:visited {
+  color: white;
+  padding: 16px;
+  padding-left: 0;
+  display: inline-block;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+@media (min-width: 768px) {
+  nav ul li a:link, nav ul li a:visited {
+    color: var(--charcoal);
+    padding: 0;
+  }
+}
+nav ul li a:link:hover, nav ul li a:link:active, nav ul li a:visited:hover, nav ul li a:visited:active {
+  color: var(--yellow);
+}
+nav ul #logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  border: 3px solid var(--yellow);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  nav ul #logo {
+    border: none;
+    border-radius: 0;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+nav ul #logo a {
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+nav ul #logo a img {
+  width: 90%;
+}
+
 /* =============
     Header
 ============= */
+header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% auto;
+  grid-template-columns: 20% auto;
+      grid-template-areas: "burger survival" "nav nav";
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  top: 0;
+  left: 0;
+}
+@media (min-width: 768px) {
+  header {
+    -ms-grid-columns: 70% auto;
+    grid-template-columns: 70% auto;
+        grid-template-areas: "nav survival";
+    padding: 24px;
+  }
+}
+header #burger-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: burger;
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header #burger-container button {
+  border: none;
+  background-color: transparent;
+  color: black;
+}
+header #burger-container button i {
+  font-size: 1.875rem;
+}
+@media (min-width: 768px) {
+  header #burger-container {
+    display: none;
+  }
+}
+header #survival-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: survival;
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header #survival-container button {
+  border: none;
+  background-color: var(--yellow);
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-radius: 23px;
+  color: black;
+  padding: 10px 15px;
+}
+header nav {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: nav;
+  padding: 16px;
+}
+@media (min-width: 768px) {
+  header #survival-container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  header nav {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+}
+@media (min-width: 768px) {
+  header nav {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
 /* =============
     Footer
 ============= */

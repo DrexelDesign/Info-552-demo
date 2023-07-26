@@ -1,3 +1,88 @@
 /* =============
     Navigation
 ============= */
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
+.show-menu{
+    display: block !important;
+}
+
+nav{
+    display: none;
+    background-color: var(--charcoal);
+    color: white;
+
+    @include md{
+        background-color: white;
+        color: var(--charcoal);
+        display: flex !important;
+        align-items: center;
+    }
+
+    ul{
+        @include md{
+            display: flex;
+            align-items: center;
+        }
+
+
+        li{
+
+            @include md{
+                margin-left: 24px;
+            }
+
+            a:link, a:visited{
+                color: white;
+                padding: 16px;
+                padding-left: 0;
+                display: inline-block;
+                transition: 0.25s;
+
+                @include md{
+                    color: var(--charcoal);
+                    padding: 0;
+                }
+
+                &:hover, &:active{
+                    color: var(--yellow);
+                }
+            }
+        }
+
+        #logo{
+            height: 60px;
+            width: 60px;
+            border-radius: 100%;
+            border: 3px solid var(--yellow);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            overflow: hidden;
+
+            @include md{
+                border: none;
+                border-radius: 0;
+                justify-content: flex-start;
+            }
+
+            a{
+                padding: 0;
+                text-align: center;
+                width: 100%;
+                img{
+                    width: 90%;
+                }
+            }
+
+            
+        }
+    }
+}

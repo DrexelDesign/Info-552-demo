@@ -4,12 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Open+Sans:wght@400;600;700&family=Pacifico&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/7ab68a398d.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="css/styles.css">
-    <title>Week 1</title>
+    <title>Navigation</title>
 </head>
 
 <body>
-    <h1>Hello World!</h1>
+    <header>
+        <section id="burger-container">
+            <button id="burger-btn"><i class="fa-regular fa-bars"></i></button>
+        </section>
+    
+        <aside id="survival-container">
+            <button>Survival Guide</button>
+        </aside>
+    
+        <nav id="main-menu">
+            <ul>
+                <li id="logo"><a href="index.html"><img src="img/header/logo.svg" alt="robot shop logo"></a></li>
+                <li><a href="index.html#history">History</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#gallery">Skynet</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="https://www.google.com/">Google</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero"></section>
+
     <script src="js/scripts-dist.js"></script>
     
 </body>
