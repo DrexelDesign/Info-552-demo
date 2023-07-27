@@ -514,6 +514,7 @@ header #burger-container button {
   background-color: transparent;
   color: black;
   font-size: 1.25rem;
+  cursor: pointer;
 }
 header nav {
   -ms-grid-row: 2;

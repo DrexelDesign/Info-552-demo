@@ -36,6 +36,7 @@ header{
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        
 
         @include lg{
             display: none;
@@ -46,6 +47,7 @@ header{
             background-color: transparent;
             color: black;
             font-size: rem-calc(20);
+            cursor: pointer;
         }
     }
 
