@@ -13,6 +13,8 @@ html {
 :root {
   --black: #000000;
   --white: #ffffff;
+  --purple: #5B61A2;
+  --gray: #AEB3B7;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -331,6 +333,16 @@ template {
 /* =============
     Base
 ============= */
+ul {
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 /* =============
     Typography
 ============= */
@@ -346,6 +358,11 @@ body {
 /* =============
     Buttons
 ============= */
+button {
+  padding: 0;
+  margin: 0;
+}
+
 /* =============
     Forms
 ============= */
@@ -383,86 +400,55 @@ a {
 
 nav {
   display: none;
-  background-color: var(--charcoal);
-  color: white;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   nav {
-    background-color: white;
-    color: var(--charcoal);
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    display: block;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   nav ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
 }
-@media (min-width: 768px) {
+nav ul li {
+  text-align: right;
+}
+@media (min-width: 1024px) {
   nav ul li {
-    margin-left: 24px;
+    margin-left: 16px;
   }
 }
 nav ul li a:link, nav ul li a:visited {
-  color: white;
-  padding: 16px;
-  padding-left: 0;
+  font-family: "Roboto", sans-serif;
   display: inline-block;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
+  color: black;
+  padding: 16px 0 16px;
+  font-weight: 500;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   nav ul li a:link, nav ul li a:visited {
-    color: var(--charcoal);
-    padding: 0;
+    padding: 24px 36px;
+    border: 1px solid var(--white);
+    color: var(--white);
+    border-radius: 6px;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
   }
 }
-nav ul li a:link:hover, nav ul li a:link:active, nav ul li a:visited:hover, nav ul li a:visited:active {
-  color: var(--yellow);
-}
-nav ul #logo {
-  height: 60px;
-  width: 60px;
-  border-radius: 100%;
-  border: 3px solid var(--yellow);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: white;
-  overflow: hidden;
-}
-@media (min-width: 768px) {
-  nav ul #logo {
-    border: none;
-    border-radius: 0;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+@media (min-width: 1024px) {
+  nav ul li a:link:hover, nav ul li a:link:active, nav ul li a:visited:hover, nav ul li a:visited:active {
+    background-color: var(--white);
+    color: var(--gray);
   }
-}
-nav ul #logo a {
-  padding: 0;
-  text-align: center;
-  width: 100%;
-}
-nav ul #logo a img {
-  width: 90%;
 }
 
 /* =============
@@ -471,97 +457,102 @@ nav ul #logo a img {
 header {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 20% auto;
-  grid-template-columns: 20% auto;
-      grid-template-areas: "burger survival" "nav nav";
+  -ms-grid-columns: 50% auto;
+  grid-template-columns: 50% auto;
+      grid-template-areas: "logo burger" "nav nav";
+  padding: 16px;
   position: fixed;
   width: 100%;
-  background-color: white;
+  background-color: var(--gray);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 1px 1px rgba(42, 48, 54, 0.3);
+          box-shadow: 0px 1px 1px rgba(42, 48, 54, 0.3);
   top: 0;
   left: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   header {
-    -ms-grid-columns: 70% auto;
-    grid-template-columns: 70% auto;
-        grid-template-areas: "nav survival";
-    padding: 24px;
+        grid-template-areas: "logo nav";
   }
 }
-header #burger-container {
+header #logo {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  grid-area: burger;
-  padding: 16px;
+  grid-area: logo;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+header #logo img {
+  width: 50px;
+}
+header #burger-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: burger;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+@media (min-width: 1024px) {
+  header #burger-container {
+    display: none;
+  }
 }
 header #burger-container button {
   border: none;
   background-color: transparent;
   color: black;
-}
-header #burger-container button i {
-  font-size: 1.875rem;
-}
-@media (min-width: 768px) {
-  header #burger-container {
-    display: none;
-  }
-}
-header #survival-container {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: survival;
-  padding: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-header #survival-container button {
-  border: none;
-  background-color: var(--yellow);
-  font-weight: 700;
-  font-size: 1.125rem;
-  border-radius: 23px;
-  color: black;
-  padding: 10px 15px;
+  font-size: 1.25rem;
 }
 header nav {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: nav;
-  padding: 16px;
 }
-@media (min-width: 768px) {
-  header #survival-container {
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-  }
-  header nav {
+@media (min-width: 1024px) {
+  header #logo {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
   }
-}
-@media (min-width: 768px) {
   header nav {
-    padding-top: 0;
-    padding-bottom: 0;
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
   }
 }
 
 /* =============
     Footer
 ============= */
+/* =============
+    Hero
+============= */
+#hero {
+  background-image: url("../img/hero/hero.jpg");
+  background-size: cover;
+  background-position: center top;
+  height: 65vh;
+  margin-top: 55px;
+}
+@media (min-width: 1024px) {
+  #hero {
+    height: 70vh;
+  }
+}
+@media (min-width: 1440px) {
+  #hero {
+    height: 75vh;
+  }
+}

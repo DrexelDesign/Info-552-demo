@@ -5,8 +5,9 @@
 #hero{
     background-image: url("../img/hero/hero.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     height: 65vh;
+    margin-top: 55px;
 
     @include lg{
         height: 70vh;

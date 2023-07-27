@@ -15,74 +15,47 @@ a{
 
 nav{
     display: none;
-    background-color: var(--charcoal);
-    color: white;
 
-    @include md{
-        background-color: white;
-        color: var(--charcoal);
-        display: flex !important;
-        align-items: center;
+    @include lg{
+        display: block;
     }
-
     ul{
-        @include md{
+
+        @include lg{
             display: flex;
+            justify-content: flex-end;
             align-items: center;
         }
 
-
         li{
+            text-align: right;
 
-            @include md{
-                margin-left: 24px;
+            @include lg{
+                margin-left: 16px;
             }
 
             a:link, a:visited{
-                color: white;
-                padding: 16px;
-                padding-left: 0;
+                font-family: 'Roboto', sans-serif;
                 display: inline-block;
-                transition: 0.25s;
+                color: black;
+                padding: 16px 0 16px;
+                font-weight: 500;
 
-                @include md{
-                    color: var(--charcoal);
-                    padding: 0;
+                @include lg{
+                    padding: 24px 36px;
+                    border: 1px solid var(--white);
+                    color: var(--white);
+                    border-radius: 6px;
+                    transition: 0.25s;
                 }
 
                 &:hover, &:active{
-                    color: var(--yellow);
+                    @include lg{
+                        background-color: var(--white);
+                        color: var(--gray);
+                    }
                 }
             }
-        }
-
-        #logo{
-            height: 60px;
-            width: 60px;
-            border-radius: 100%;
-            border: 3px solid var(--yellow);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            overflow: hidden;
-
-            @include md{
-                border: none;
-                border-radius: 0;
-                justify-content: flex-start;
-            }
-
-            a{
-                padding: 0;
-                text-align: center;
-                width: 100%;
-                img{
-                    width: 90%;
-                }
-            }
-
-            
         }
     }
 }
